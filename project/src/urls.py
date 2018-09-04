@@ -6,11 +6,9 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
-
-urlpatterns = [
-]
-
-urlpatterns += i18n_patterns(
+urlpatterns = i18n_patterns(
+    url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
+    prefix_default_language=True,
 )
 
 if not settings.PRODUCTION:

@@ -1,0 +1,30 @@
+{% load staticfiles %}
+{% load i18n %}
+
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Programador Python | Creative Coder' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block head_title %}
+    <title>{% trans "Bernardo Fontes (Berin)" %}</title>
+    {% endblock %}
+    <meta name="google" content="notranslate" />
+
+    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+
+  </head>
+
+  <body>
+      <h2>Bernardo Fontes</h2>
+      <h3>a.k.a. Berin</h3>
+      <a href="#">{% trans "Sobre" %}</a>
+      <a href="#">{% trans "Projetos" %}</a>
+      <a href="#">{% trans "Sketches" %}</a>
+      <a href="#">{% trans "Palestras" %}</a>
+      <a href="#">{% trans "Links" %}</a>
+  </body>
+
+</html>
