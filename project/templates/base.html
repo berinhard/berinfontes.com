@@ -7,22 +7,27 @@
     <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Programador Python | Creative Coder' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% trans "Bernardo Fontes (Berin)" %}</title>
+    <title>{% block head_title %} {% endblock %}</title>
     <meta name="google" content="notranslate" />
 
     <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
-
   </head>
 
   <body>
-      <h2>Bernardo Fontes</h2>
-      <h3>a.k.a. Berin</h3>
+    <header>
+      <a href='{% url "home" %}'>Bernardo Fontes</a>
       <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
       <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
       <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
       <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
       <a href="{% url 'links' %}">{% trans "Links" %}</a>
+    </header>
+
+    <div class="main_container">
+        {% block content %}
+        {% endblock %}
+    </div>
   </body>
 
 </html>
