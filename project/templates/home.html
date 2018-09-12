@@ -10,19 +10,28 @@
     <title>{% trans "Bernardo Fontes (Berin)" %}</title>
     <meta name="google" content="notranslate" />
 
-    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href='{% static "css/basscss.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
 
   </head>
 
   <body>
-      <h2>Bernardo Fontes</h2>
-      <h3>a.k.a. Berin</h3>
-      <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
-      <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
-      <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
-      <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
-      <a href="{% url 'links' %}">{% trans "Links" %}</a>
+
+      <div id='home'>
+          <div  class="overflow-auto">
+        <div class="table">
+            <div class="table-cell align-middle">
+          <h2>Bernardo Fontes</h2>
+          <h3>a.k.a. Berin</h3>
+          <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
+          <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
+          <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
+          <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
+          <a href="{% url 'links' %}">{% trans "Links" %}</a>
+            </div>
+        </div>
+        </div>
+      </div>
   </body>
 
 </html>

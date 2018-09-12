@@ -7,24 +7,41 @@
     <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Programador Python | Creative Coder' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block head_title %} {% endblock %}</title>
+    <title>{% block head_title %}{% endblock %}</title>
     <meta name="google" content="notranslate" />
 
-    <link href="https://unpkg.com/basscss@8.0.2/css/basscss.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href='{% static "css/basscss.min.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
   </head>
 
   <body>
     <header>
-      <a href='{% url "home" %}'>Bernardo Fontes</a>
-      <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
-      <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
-      <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
-      <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
-      <a href="{% url 'links' %}">{% trans "Links" %}</a>
+      <div class="clearfix">
+        <div class="sm-col sm-col-12 md-col-12 lg-col-7">
+          <a class="main_title" href='{% url "home" %}'>Bernardo Fontes</a>
+        </div>
+        <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
+          <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
+        </div>
+        <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
+          <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
+        </div>
+
+        <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
+          <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
+        </div>
+
+        <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
+          <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
+        </div>
+
+        <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
+          <a href="{% url 'links' %}">{% trans "Links" %}</a>
+        </div>
+      </div>
     </header>
 
-    <div class="main_container">
+    <div class="container">
         {% block content %}
         {% endblock %}
     </div>

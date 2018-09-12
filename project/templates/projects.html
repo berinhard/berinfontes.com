@@ -7,5 +7,40 @@
 {% endblock %}
 
 {% block content %}
-<p>projetos</p>
+  <div id="projects_list">
+
+    <div class="list_title">
+      <h1>{% trans "Projetos" %}</h1>
+      <hr/>
+    </div>
+
+    <div class="project">
+        <h2 id="outra_33_bienal"><a class="no_hover" href="#outra_33_bienal">{% trans "Outra 33 Bienal" %}</a></h2>
+        <a href="http://outra33.bienal.org.br" target="_blank"><img src='{% static "img/bienal.png" %}'/></a>
+        <p class="duration bold">2017</p>
+        <div class="description">
+          <p>{% trans "Projeto do artista Bruno Moreschi para a 33ª Bienal de Artes de São Paulo" %}</p>
+          <p>{% trans "Atuação: Desenvolvimento do site e implementação das ações" %}</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <hr/>
+    </div>
+
+    <div class="project">
+        <h2 id="pessoas_cc"><a class="no_hover" href="#pessoas_cc">{% trans "pessoas.cc" %}</a></h2>
+        <a href="http://pessoas.cc" target="_blank"><img src='{% static "img/pessoas.png" %}'/></a>
+        <p class="duration bold">{% trans "2013 - atualmente" %}</p>
+        <div class="description">
+          <p>{% trans "Coletivo de escrita poética" %}</p>
+          <p>{% trans "Atuação: Criação e escrita" %}</p>
+        </div>
+    </div>
+
+    <div class="separator">
+        <hr/>
+    </div>
+
+  </div>
 {% endblock %}
