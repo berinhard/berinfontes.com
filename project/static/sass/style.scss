@@ -35,6 +35,16 @@ h1, h2, h3, h4, h5, h6, b, strong, .bold {
     color: $black;
 }
 
+
+.bold_mono {
+    font-family: "IBMPlexMono-Bold";
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    font-variant: normal;
+    color: $black;
+}
+
 hr {border-top: 1px solid $black;}
 
 p, span {
@@ -62,8 +72,7 @@ a {
 
 header {
     font-size: 1.5rem;
-    font-family: "IBMPlexMono-Bold";
-    font-weight: bold;
+    font-family: "IBMPlexMono-Regular";
     .link {text-align: center;}
     padding-bottom: 1rem;
     border-bottom: 1px solid $black;
@@ -80,14 +89,12 @@ header {
     padding-top: 1rem;
 
     hr {width: 30%}
-}
 
-#projects_list {
-    .list_title {
+    .section_title {
         padding-bottom: 1rem;
     }
 
-    h2 {
+    .item_title {
       text-decoration: underline;
       a {font-family: "IBMPlexSans-Bold";}
     }
@@ -111,6 +118,8 @@ header {
         };
     }
 
-    .separator { hr {width: 10%; } }
+    .talk {
+        padding-bottom: 1rem;
+    }
 
 }
