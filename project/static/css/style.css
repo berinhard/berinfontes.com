@@ -11,7 +11,7 @@
   font-family: "IBMPlexSans-Bold";
   src: url("/static/fonts/IBMPlexSans-Bold.ttf"); }
 body {
-  margin: 2rem 2rem 2rem 2rem; }
+  padding: 2rem 2rem 2rem 2rem; }
 
 h1, h2, h3, h4, h5, h6, b, strong, .bold {
   font-family: "IBMPlexSans-Bold";
@@ -57,8 +57,14 @@ header {
     text-align: center; }
   header .main_title {
     padding-left: 1.5rem; }
-    header .main_title:hover {
-      border-bottom: 0px; }
+    header .main_title a {
+      font-family: "IBMPlexMono-Bold"; }
+      header .main_title a:hover {
+        border-bottom: 0px; }
+  @media only screen and (max-width: 64em) {
+    header .main_title {
+      padding-left: 0rem;
+      text-align: center; } }
 
 .container {
   text-align: center;
@@ -83,6 +89,9 @@ header {
       height: auto;
       padding: 0.5rem 0.5rem 0.5rem 0.5rem;
       border: 1px solid #333; }
+    @media only screen and (max-width: 64em) {
+      .container .project img {
+        width: 100%; } }
   .container .talk {
     padding-bottom: 1rem; }
 

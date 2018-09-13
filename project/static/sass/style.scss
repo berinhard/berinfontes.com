@@ -22,7 +22,7 @@ $black: #333;
 
 
 body {
-    margin: 2rem 2rem 2rem 2rem;
+    padding: 2rem 2rem 2rem 2rem;
 }
 
 
@@ -77,9 +77,19 @@ header {
     padding-bottom: 1rem;
     border-bottom: 1px solid $black;
     .main_title {
+        a {
+          font-family: "IBMPlexMono-Bold";
+          &:hover {
+              border-bottom: 0px
+          }
+        }
         padding-left: 1.5rem;
-        &:hover {
-            border-bottom: 0px
+    }
+
+    @media only screen and (max-width: 64em) {
+        .main_title{
+            padding-left: 0rem;
+            text-align: center;
         }
     }
 }
@@ -116,6 +126,11 @@ header {
           padding: 0.5rem 0.5rem 0.5rem 0.5rem;
           border: 1px solid $black;
         };
+
+
+        @media only screen and (max-width: 64em) {
+            img { width:100% }
+        }
     }
 
     .talk {

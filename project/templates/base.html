@@ -23,8 +23,8 @@
     {% with request.path as current %}
     <header>
       <div class="clearfix">
-        <div class="sm-col sm-col-12 md-col-12 lg-col-7">
-          <a class="main_title" href='{% url "home" %}'>Bernardo Fontes</a>
+        <div class="sm-col sm-col-12 md-col-12 lg-col-7 main_title">
+          <a href='{% url "home" %}'>Bernardo Fontes</a>
         </div>
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
           <a class="{% if current == about_url %}bold_mono{% endif %}" href="{% url 'about' %}">{% trans "Sobre" %}</a>
