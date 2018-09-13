@@ -94,5 +94,8 @@ header {
         width: 100%; } }
   .container .talk {
     padding-bottom: 1rem; }
+  .container .links ul {
+    list-style: none;
+    padding-left: 0; }
 
 /*# sourceMappingURL=style.css.map */
