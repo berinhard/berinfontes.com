@@ -1,37 +1,84 @@
-{% load staticfiles %}
+{% extends "base.html" %}
+{% load static %}
 {% load i18n %}
 
-<html>
-  <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Programador Python | Creative Coder' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block head_title %}
+    Bernardo Fontes (Berin)
+{% endblock %}
 
-    <title>{% trans "Bernardo Fontes (Berin)" %}</title>
-    <meta name="google" content="notranslate" />
+{% block extra_head %}
+<script src='{% static "js/p5/p5.min.js" %}'></script>
+{% endblock %}
 
-    <link rel="stylesheet" type="text/css" href='{% static "css/basscss.min.css" %}'>
-    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+{% block content %}
+<div class="home" id="sketch-holder">
+</div>
 
-  </head>
 
-  <body>
+<script type="text/javascript">
 
-      <div id='home'>
-          <div  class="overflow-auto">
-        <div class="table">
-            <div class="table-cell align-middle">
-          <h2>Bernardo Fontes</h2>
-          <h3>a.k.a. Berin</h3>
-          <a href="{% url 'about' %}">{% trans "Sobre" %}</a>
-          <a href="{% url 'projects' %}">{% trans "Projetos" %}</a>
-          <a href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
-          <a href="{% url 'talks' %}">{% trans "Palestras" %}</a>
-          <a href="{% url 'links' %}">{% trans "Links" %}</a>
-            </div>
-        </div>
-        </div>
-      </div>
-  </body>
 
-</html>
+
+function setup() {
+  var canvas = createCanvas(windowWidth - 200, windowHeight - 150);
+
+  canvas.parent('sketch-holder');
+
+  background("#333");
+  strokeWeight(2);
+}
+
+
+function RainDrop(x, y, color, reverse_color) {
+  this.x = x;
+  this.y = y;
+  this.color = color;
+  this.reverse_color = reverse_color;
+  this.current_color = color;
+  this.speed = random(0, 2);
+
+  this.update = function() {
+    this.y += this.speed;
+
+    if (this.y > height || this.y < 0){
+      this.speed = this.speed * -1;
+    }
+
+    if (this.speed > 0){
+      this.current_color = this.color;
+    } else {
+      this.current_color = this.reverse_color;
+    }
+  }
+
+  this.show = function() {
+    stroke(this.current_color);
+    point(this.x, this.y)
+  }
+
+}
+
+var rain_drops = [];
+function draw() {
+  for (var i = 0; i < rain_drops.length; i++) {
+    rain_drops[i].update();
+    rain_drops[i].show();
+  }
+
+
+  var white = 233;
+  var black = 0;
+
+  if (frameCount % 10 == 0){
+    var rainDrop = new RainDrop(random(0, width), 0, black, white);
+    rain_drops.push(rainDrop);
+  }
+
+  if (frameCount % 42 == 0 && 0 < mouseX < width){
+    var rainDrop = new RainDrop(mouseX, 0, white, black);
+    rain_drops.push(rainDrop);
+  }
+
+}
+</script>
+{% endblock %}
