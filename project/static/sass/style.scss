@@ -120,7 +120,7 @@ header {
             padding-bottom: 0.5rem;
         }
 
-        img {
+        img, .video-container{
           width: 50%;
           height: auto;
           padding: 0.5rem 0.5rem 0.5rem 0.5rem;
@@ -129,7 +129,7 @@ header {
 
 
         @media only screen and (max-width: 64em) {
-            img { width:100% }
+            img, .video-container { width:100% }
         }
     }
 
