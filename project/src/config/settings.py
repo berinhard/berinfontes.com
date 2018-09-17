@@ -86,16 +86,11 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-LANGUAGE_CODE = 'pt-BR'
+LANGUAGE_CODE = 'en'
 TIME_ZONE = 'America/Sao_Paulo'
-USE_I18N = True
+USE_I18N = False
 USE_L10N = True
 USE_TZ = True
-LOCALE_PATHS = [BASE_DIR.child('locales')]
-LANGUAGES = [
-    ('pt-BR', 'Português'),
-    ('en', 'English'),
-]
 
 import django_heroku
 django_heroku.settings(locals())

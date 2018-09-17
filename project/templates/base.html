@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Programador Python | Creative Coder' %}">
+    <meta name="description" content="{% trans 'Bernardo Fontes (Berin) - Python Developer | Creative Coder' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>{% block head_title %}{% endblock %}</title>
@@ -28,10 +28,10 @@
           <a href='{% url "home" %}'>Bernardo Fontes</a>
         </div>
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
-          <a class="{% if current == about_url %}bold_mono{% endif %}" href="{% url 'about' %}">{% trans "Sobre" %}</a>
+          <a class="{% if current == about_url %}bold_mono{% endif %}" href="{% url 'about' %}">{% trans "About" %}</a>
         </div>
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
-          <a class="{% if current == projects_url %}bold_mono{% endif %}" href="{% url 'projects' %}">{% trans "Projetos" %}</a>
+          <a class="{% if current == projects_url %}bold_mono{% endif %}" href="{% url 'projects' %}">{% trans "Projects" %}</a>
         </div>
 
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
@@ -39,7 +39,7 @@
         </div>
 
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
-          <a class="{% if current == talks_url %}bold_mono{% endif %}" href="{% url 'talks' %}">{% trans "Palestras" %}</a>
+          <a class="{% if current == talks_url %}bold_mono{% endif %}" href="{% url 'talks' %}">{% trans "Talks" %}</a>
         </div>
 
         <div class="sm-col sm-col-12 md-col-12 lg-col-1 link">
