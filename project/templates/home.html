@@ -69,7 +69,7 @@ function draw() {
   var white = 233;
   var black = 0;
 
-  if (frameCount % 10 == 0){
+  if (frameCount % 10 == 0 && rain_drops.length < 500){
     var rainDrop = new RainDrop(random(0, width), 0, black, white);
     rain_drops.push(rainDrop);
   }
@@ -78,7 +78,6 @@ function draw() {
     var rainDrop = new RainDrop(mouseX, 0, white, black);
     rain_drops.push(rainDrop);
   }
-
 }
 </script>
 {% endblock %}
