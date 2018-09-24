@@ -92,7 +92,8 @@ USE_I18N = False
 USE_L10N = True
 USE_TZ = True
 
-SECURE_SSL_REDIRECT = True
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
 
 import django_heroku
 django_heroku.settings(locals())
