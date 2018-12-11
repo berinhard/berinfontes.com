@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+    Bernardo Fontes (Berin) | {% trans "Palestras" %}
+{% endblock %}
+
+{% block content %}
+
+  {% for talk in talks %}
+  <div class="talk">
+      <h2 class="item_title" id="{{ talk.id }}"><a class="no_hover" href="#{{ talk.id }}">{{ talk.title }}</a></h2>
+      <p class="bold">{{ talk.year }} - {{ talk.event}} - {{ talk.city }}</p>
+      <div class="links">
+          <span>
+              {% for description, link in talk.links %}
+              <a href="{{ link }}" target="_blank">{{ description }}</a>{% if not forloop.last %}  |  {% endif %}
+              {% endfor %}
+          </span>
+      </div>
+  </div>
+  {% endfor %}
+
+{% endblock %}
