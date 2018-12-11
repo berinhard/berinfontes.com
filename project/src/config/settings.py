@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
+    'src.berin',
     'raven.contrib.django.raven_compat',
 ]
 

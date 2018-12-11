@@ -5,12 +5,14 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from src.berin.views import TalkListView
 
 urlpatterns = i18n_patterns(
+    path('admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name='home.html'), name='home'),
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^projects/$', TemplateView.as_view(template_name='projects.html'), name='projects'),
-    url(r'^talks/$', TemplateView.as_view(template_name='talks.html'), name='talks'),
+    url(r'^talks/$', TalkListView.as_view(), name='talks'),
     url(r'^links/$', TemplateView.as_view(template_name='links.html'), name='links'),
     prefix_default_language=True,
 )
