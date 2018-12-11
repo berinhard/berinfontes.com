@@ -35,15 +35,15 @@
         </div>
 
         <div class="sm-col sm-col-12 md-col-12 lg-col-2 link">
-          <a target="_blank" href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
-        </div>
-
-        <div class="sm-col sm-col-12 md-col-12 lg-col-2 link">
           <a class="{% if current == talks_url %}bold_mono{% endif %}" href="{% url 'talks' %}">{% trans "Talks" %}</a>
         </div>
 
         <div class="sm-col sm-col-12 md-col-12 lg-col-2 link">
           <a class="{% if current == links_url %}bold_mono{% endif %}" href="{% url 'links' %}">{% trans "Links" %}</a>
+        </div>
+
+        <div class="sm-col sm-col-12 md-col-12 lg-col-2 link">
+          <a target="_blank" href="https://berinhard.github.io/sketches/">{% trans "Sketches" %}</a>
         </div>
       </div>
     </header
