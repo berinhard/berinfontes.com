@@ -146,12 +146,20 @@ header {
             padding-bottom: 0.5rem;
         }
 
-        img, .video-container{
-          width: 20%;
-          height: auto;
-          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
-          border: 1px solid $black;
-        };
+        .images {
+            img {
+              width: 20%;
+              height: auto;
+              padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+              border: 1px solid $black;
+            }
+
+            a {
+              &:hover {
+                border-bottom: none;
+              }
+           }
+       }
 
 
         @media only screen and (max-width: 64em) {

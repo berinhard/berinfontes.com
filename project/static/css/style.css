@@ -101,11 +101,13 @@ header {
       text-align: center;
       max-width: 50%;
       padding-bottom: 0.5rem; }
-    .container .project-detail img, .container .project-detail .video-container {
+    .container .project-detail .images img {
       width: 20%;
       height: auto;
       padding: 0.5rem 0.5rem 0.5rem 0.5rem;
       border: 1px solid #333; }
+    .container .project-detail .images a:hover {
+      border-bottom: none; }
     @media only screen and (max-width: 64em) {
       .container .project-detail img, .container .project-detail .video-container {
         width: 100%; } }
