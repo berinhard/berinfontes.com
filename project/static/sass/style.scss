@@ -127,6 +127,32 @@ header {
           border: 1px solid $black;
         };
 
+        img.portrait {
+            width: auto;
+            height: 75%;
+        }
+
+        @media only screen and (max-width: 64em) {
+            img, .video-container { width:100% }
+        }
+    }
+
+    .project-detail  {
+        padding-bottom: 1rem;
+
+        .description{
+            text-align: center;
+            max-width: 50%;
+            padding-bottom: 0.5rem;
+        }
+
+        img, .video-container{
+          width: 20%;
+          height: auto;
+          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+          border: 1px solid $black;
+        };
+
 
         @media only screen and (max-width: 64em) {
             img, .video-container { width:100% }

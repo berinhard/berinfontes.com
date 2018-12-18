@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+  Bernardo Fontes (Berin) | {% trans "Projects" %} | {% trans "PythonBrasil's Badge Visualization" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="project-detail">
+      <h2 class="item_title">{% trans "PythonBrasil[14]'s Badge Visualization" %}</h2>
+      <p class="duration bold">2018</p>
+      <div class="description block mx-auto">
+          <p>{% trans "During PythonBrasil[14] at Natal, Rio Grande do Norte, Brazil, I've created a visual project using the participant's badges. Each badge had a 10 chars identification token and, using this token as an input to control the sketch randomness, I've generated one single image per badge." %}</p>
+          <p>{% trans "Technologies used: Python and Processing" %}</p>
+          <p>{% trans "The Python code is "%}<a href="https://github.com/berinhard/sketches/tree/master/pybr_code" target="_blank">{%trans "at this Github repo" %}</a>.</p>
+      </div>
+
+      <div class="images">
+        <a href='{% static "img/pybr_proj/QYZHNRPUEL.png" %}' target="_blank"><img src='{% static "img/pybr_proj/QYZHNRPUEL.png" %}'/></a>
+        <a href='{% static "img/pybr_proj/QA7TA8NA9C.png" %}' target="_blank"><img src='{% static "img/pybr_proj/QA7TA8NA9C.png" %}'/></a>
+        <a href='{% static "img/pybr_proj/QJZW7W65BD.png" %}' target="_blank"><img src='{% static "img/pybr_proj/QJZW7W65BD.png" %}'/></a>
+        <a href='{% static "img/pybr_proj/QGSV8R8584.png" %}' target="_blank"><img src='{% static "img/pybr_proj/QGSV8R8584.png" %}'/></a>
+      </div>
+
+  </div>
+
+  </div>
+
+{% endblock %}

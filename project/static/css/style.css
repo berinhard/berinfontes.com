@@ -89,8 +89,25 @@ header {
       height: auto;
       padding: 0.5rem 0.5rem 0.5rem 0.5rem;
       border: 1px solid #333; }
+    .container .project img.portrait {
+      width: auto;
+      height: 75%; }
     @media only screen and (max-width: 64em) {
       .container .project img, .container .project .video-container {
+        width: 100%; } }
+  .container .project-detail {
+    padding-bottom: 1rem; }
+    .container .project-detail .description {
+      text-align: center;
+      max-width: 50%;
+      padding-bottom: 0.5rem; }
+    .container .project-detail img, .container .project-detail .video-container {
+      width: 20%;
+      height: auto;
+      padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+      border: 1px solid #333; }
+    @media only screen and (max-width: 64em) {
+      .container .project-detail img, .container .project-detail .video-container {
         width: 100%; } }
   .container .talk {
     padding-bottom: 1rem; }
