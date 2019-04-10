@@ -23,7 +23,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'src.berin',
-    'raven.contrib.django.raven_compat',
 ]
 
 MIDDLEWARE = [
