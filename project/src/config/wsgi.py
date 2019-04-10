@@ -7,10 +7,13 @@ For more information on this file, see
 https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
 """
 
-import os
+from unipath import Path
+import os, sys
 
 from django.core.wsgi import get_wsgi_application
+PROJECT_DIR = Path(__file__).ancestor(3)
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "src.config.settings")
+sys.path.insert(0, PROJECT_DIR)
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.settings')
 
 application = get_wsgi_application()
