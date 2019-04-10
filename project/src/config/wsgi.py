@@ -14,6 +14,6 @@ from django.core.wsgi import get_wsgi_application
 PROJECT_DIR = Path(__file__).ancestor(3)
 
 sys.path.insert(0, PROJECT_DIR)
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.config.settings')
 
 application = get_wsgi_application()
