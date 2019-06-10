@@ -146,6 +146,20 @@ header {
             padding-bottom: 0.5rem;
         }
 
+        .video-container{
+          width: 50%;
+          height: auto;
+          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+          border: 1px solid $black;
+        }
+
+        .portrait-video-container{
+          width: 30%;
+          height: auto;
+          padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+          border: 1px solid $black;
+        }
+
         .images {
             img {
               width: 20%;

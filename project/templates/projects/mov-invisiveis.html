@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+  Bernardo Fontes (Berin) | {% trans "Projects" %} | {% trans "PythonBrasil's Badge Visualization" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="project-detail">
+      <h2 class="item_title">{% trans "Invisible Movement" %}</h2>
+      <p class="duration bold">2018</p>
+      <div class="description block mx-auto">
+          <p>{% trans "<i>Invisible Movement</i> composes a series of 3 videos created randomly through generative art. Each of the videos proposes a movement nature (Composition, Structural and Destructural) that interacts with the architecture of the city of São Paulo, Brazil, using code and programming to emerge new narratives from the image." %}</p>
+          <p>{% trans "Developed during the artistic residence at SESC 24 de Maio, São Paulo, with the guidance of the artists Mônica Rizzolli and João Adriano Freitas. Technologies used: Processing" %}</p>
+          <p>{% trans "The Processing code is located "%}<a href="https://github.com/berinhard/residencia_sesc" target="_blank">{%trans "at this Github repo" %}</a>.</p>
+      </div>
+
+      <p><b>Composition Movement</b></p>
+      <center>
+      <div class="video-container">
+          <div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/333632378?portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+      </center>
+
+      <p><b>Structural Movement</b></p>
+      <center>
+      <div class="portrait-video-container">
+            <div style="padding:149.63% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/333634979?portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+      </center>
+
+      <p><b>Destructural Movement</b></p>
+      <center>
+      <div class="video-container">
+           <div style="padding:66.67% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/341317689?portrait=0" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+      </div>
+      </center>
+
+  </div>
+
+  </div>
+
+{% endblock %}
+

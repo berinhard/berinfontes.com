@@ -13,6 +13,7 @@ urlpatterns = i18n_patterns(
     url(r'^about/$', TemplateView.as_view(template_name='about.html'), name='about'),
     url(r'^projects/$', TemplateView.as_view(template_name='projects.html'), name='projects'),
     url(r'^projects/python-brasil-badges-visualizations$', TemplateView.as_view(template_name='projects/pybr_proj.html'), name='pybr_badge'),
+    url(r'^projects/invisible-movements', TemplateView.as_view(template_name='projects/mov-invisiveis.html'), name='invisible_mov'),
     url(r'^talks/$', TalkListView.as_view(), name='talks'),
     url(r'^links/$', TemplateView.as_view(template_name='links.html'), name='links'),
     prefix_default_language=True,
