@@ -135,6 +135,9 @@ header {
         @media only screen and (max-width: 64em) {
             img, .video-container { width:100% }
         }
+        a {
+            font-weight: bold;
+        }
     }
 
     .project-detail  {
@@ -183,6 +186,10 @@ header {
 
     .talk {
         padding-bottom: 1rem;
+
+        a {
+            font-weight: bold;
+        }
     }
 
     .links {
@@ -194,5 +201,10 @@ header {
 
     .about {
         img {width: 30%;}
+
+
+        a {
+            font-weight: bold;
+        }
     }
 }

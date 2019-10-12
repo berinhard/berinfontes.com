@@ -11,7 +11,7 @@
   {% for talk in talks %}
   <div class="talk">
       <h2 class="item_title" id="{{ talk.id }}"><a class="no_hover" href="#{{ talk.id }}">{{ talk.title }}</a></h2>
-      <p class="bold">{{ talk.year }} - {{ talk.event}} - {{ talk.city }}</p>
+      <p>{{ talk.year }} - {{ talk.event}} - {{ talk.city }}</p>
       <div class="links">
           <span>
               {% for description, link in talk.links %}

@@ -127,6 +127,9 @@ header .main_title a:hover {
     width: 100%;
   }
 }
+.container .project a {
+  font-weight: bold;
+}
 .container .project-detail {
   padding-bottom: 1rem;
 }
@@ -164,12 +167,18 @@ header .main_title a:hover {
 .container .talk {
   padding-bottom: 1rem;
 }
+.container .talk a {
+  font-weight: bold;
+}
 .container .links ul {
   list-style: none;
   padding-left: 0;
 }
 .container .about img {
   width: 30%;
+}
+.container .about a {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style.css.map */
