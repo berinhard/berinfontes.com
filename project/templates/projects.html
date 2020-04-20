@@ -9,6 +9,17 @@
 {% block content %}
 
   <div class="project">
+      <h2 class="item_title" id="exch_with_turkers"><a class="no_hover" href="#exch_with_turkers">{% trans "Exch w/Turkers" %}</a></h2>
+      <a href="{% url 'exch_turkers' %}" target="_blank"><img src='{% static "img/with_turkers.png" %}'/></a>
+      <p class="duration bold">{% trans "2020" %}</p>
+      <div class="description">
+        <p>{% trans "A webchat art project developed in partnership with " %}<a href="https://gecid-aia.github.io/" target="_blank">GECID</a></p>
+      </div>
+  </div>
+
+  <hr/>
+
+  <div class="project">
       <h2 class="item_title" id="pyp5js"><a class="no_hover" href="#pyp5js">{% trans "pyp5js" %}</a></h2>
       <a href="https://berinhard.github.io/pyp5js/" target="_blank"><img src='{% static "img/pyp5js.png" %}'/></a>
       <p class="duration bold">{% trans "2019" %}</p>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+  Bernardo Fontes (Berin) | {% trans "Projects" %} | {% trans "Exch w/Turkers" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="project-detail">
+      <h2 class="item_title">{% trans "Exch w/Turkers" %}</h2>
+      <p class="duration bold">2020</p>
+      <div class="description block mx-auto">
+          <p>{% trans "Exch w/Turkers is a chat-like art project with the goal to bring to light the role played by humans in running Artificial Intelligences (AIs), as well as their working conditions. You can visit the project at" %} <a href='https://exchanges.withturkers.net/' target='_blank'>exchanges.withturkers.net</a>.</p>
+          <p>{% trans "The project was a result from a partnership betweet aarea and the Grupo de Experiências Críticas em Infraestruturas Digitais (GECID) [Critical Experiments in Digital Infrastructures Group] / GAIA / C4AI, Inova USP, with important collaborations from Luciano Ratamero in the frontend code." %}</p>
+          <p>{% trans "Technologies used: Django, Python and React.js" %}</p>
+          <p>{% trans "The project source code is "%}<a href="https://github.com/gecid-aia/turkers-chat" target="_blank">{%trans "at this Github repo" %}</a>.</p>
+      </div>
+
+      <img  src='{% static "img/with_turkers.png" %}'/>
+      <p></p>
+      <div class="images">
+        <img width="50%" src='{% static "img/turker_02.png" %}'/>
+      </div>
+
+  </div>
+
+  </div>
+
+{% endblock %}
