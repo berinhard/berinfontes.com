@@ -75,11 +75,19 @@ header {
     .main_title {
         a {
           font-family: "IBMPlexMono-Bold";
-          &:hover {
-              border-bottom: 0px
-          }
         }
         padding-left: 1.5rem;
+    }
+
+    a {
+       text-decoration: none;
+       &:hover {
+           text-decoration: underline;
+       }
+    }
+
+    .active {
+        text-decoration: underline;
     }
 
     @media only screen and (max-width: 64em) {
