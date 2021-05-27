@@ -11,3 +11,4 @@
 .sass-cache/
 project/media/*
 project/staticfiles
+node_modules/
