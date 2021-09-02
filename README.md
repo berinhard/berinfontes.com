@@ -2,7 +2,7 @@ http://berinfontes.com
 
 ## Setup dev
 
-O projeto pode precisar do Postgres para executar. Então por isso, é necessário instalar alguns pacotes com `sudo apt install python3-dev libpq-dev build-essentials postgresql postgresql-contrib`.
+O projeto pode precisar do Postgres para executar. Então por isso, é necessário instalar alguns pacotes com `sudo apt install python3-dev libpq-dev build-essential postgresql postgresql-contrib`.
 
 Outra dependência é o Node.js para rodar o [sass](https://www.npmjs.com/package/sass). Para instalar o npm, siga [este guia](https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-20-04-pt).
 
