@@ -1,0 +1,23 @@
+{
+  "name": "berinfontes.com",
+  "version": "1.0.0",
+  "description": "http://berinfontes.com",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.39.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berinhard/berinfontes.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/berinhard/berinfontes.com/issues"
+  },
+  "homepage": "https://github.com/berinhard/berinfontes.com#readme"
+}
