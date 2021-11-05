@@ -1,4 +1,5 @@
 from django.db import models
+from markupfield.fields import MarkupField
 
 
 class Talk(models.Model):
@@ -24,3 +25,19 @@ class Talk(models.Model):
 
     class Meta:
         ordering = ['-date_added']
+
+class Project(models.Model):
+    title = models.CharField(max_length=100)
+    year = models.IntegerField()
+    description = MarkupField(default_markup_type='markdown')
+    short_description = models.CharField(max_length=140)
+    image = models.ImageField(upload_to='projectcovers')
+    slug = models.SlugField(primary_key=True)
+
+    class Meta: 
+        ordering = ['-year']
+
+class ProjectImage(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='projectimages')
+    short_description = models.CharField(max_length=140, default='', blank=True)
