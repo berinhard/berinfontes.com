@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+    Bernardo Fontes (Berin) | {% trans "Projetos" %}
+{% endblock %}
+
+{% block content %}
+
+  {% for project in projects %}
+  <div class="talk">
+      <h2 class="item_title" id="{{ project.id }}"><a class="no_hover" href="#{{ project.id }}">{{ project.title }}</a></h2>
+      <p>{{ project.year }} - {{ project.description}}</p>
+  </div>
+  {% endfor %}
+
+{% endblock %}
