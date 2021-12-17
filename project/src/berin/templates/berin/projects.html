@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block head_title %}
+    Bernardo Fontes (Berin) | {% trans "Projetos" %}
+{% endblock %}
+
+{% block content %}
+
+  {% for project in projects %}
+
+  <div class="project">
+    <h2 class="item_title" id="{{ project.slug }}">
+      <a class="no_hover" href="{{ project.slug }}">{{ project.title }}</a>
+    </h2>
+    <a href="{{ project.slug }}" target="_blank"><img src='{{ project.image.url }}'/></a>
+    <p class="duration bold">{{ project.year }}</p>
+    <div class="description">
+      <p>{{ project.short_description }}</p>
+    </div>
+  </div>
+
+  <hr>
+  {% endfor %}
+
+{% endblock %}
