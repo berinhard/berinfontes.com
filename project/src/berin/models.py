@@ -31,8 +31,9 @@ class Project(models.Model):
     year = models.IntegerField()
     description = MarkupField(default_markup_type='markdown')
     short_description = models.CharField(max_length=140)
-    image = models.ImageField(upload_to='projectcovers')
+    image = models.ImageField(upload_to='projectcovers', verbose_name='Capa')
     slug = models.SlugField(primary_key=True)
+    html_extra = models.TextField(default='', blank=True)
 
     class Meta: 
         ordering = ['-year']

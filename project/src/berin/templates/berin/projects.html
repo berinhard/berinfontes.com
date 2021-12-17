@@ -9,10 +9,19 @@
 {% block content %}
 
   {% for project in projects %}
-  <div class="talk">
-      <h2 class="item_title" id="{{ project.id }}"><a class="no_hover" href="#{{ project.id }}">{{ project.title }}</a></h2>
-      <p>{{ project.year }} - {{ project.description}}</p>
+
+  <div class="project">
+    <h2 class="item_title" id="{{ project.slug }}">
+      <a class="no_hover" href="{{ project.slug }}">{{ project.title }}</a>
+    </h2>
+    <a href="{{ project.slug }}" target="_blank"><img src='{{ project.image.url }}'/></a>
+    <p class="duration bold">{{ project.year }}</p>
+    <div class="description">
+      <p>{{ project.short_description }}</p>
+    </div>
   </div>
+
+  <hr>
   {% endfor %}
 
 {% endblock %}
