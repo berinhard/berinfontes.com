@@ -3,7 +3,7 @@ dj-database-url==0.5.0
 django-extensions==2.1.2
 django-heroku==0.3.1
 gunicorn==19.9.0
-ipython==6.5.0
+ipython==7.16.3
 psycopg2-binary==2.8.6
 python-decouple==3.1
 raven==6.9.0
