@@ -10,3 +10,5 @@ raven==6.9.0
 Unipath==1.1
 whitenoise==4.0
 django-markupfield==2.0.1
+Markdown==3.5.1
+Pillow==10.1.0
