@@ -12,3 +12,4 @@
 project/media/*
 project/staticfiles
 node_modules/
+.idea
