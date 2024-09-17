@@ -7,9 +7,12 @@
 {% endblock %}
 
 {% block content %}
+  <div class="project">
+    <h2 class="item_title">${{titulo}}</h2>
+  </div>
 
   <div class="project">
-      <h2 class="item_title" id="exch_with_turkers"><a class="no_hover" href="#exch_with_turkers">{% trans "Exch w/Turkers" %}</a></h2>
+      <h2 class="item_title" id="exch_with_turkers"><a class="no_hover" href="#exch_with_turkers">${{titulo}}</a></h2>
       <a href="{% url 'exch_turkers' %}" target="_blank"><img src='{% static "img/with_turkers.png" %}'/></a>
       <p class="duration bold">{% trans "2020" %}</p>
       <div class="description">

@@ -2,6 +2,8 @@ from unipath import Path
 
 from decouple import config
 
+import markdown
+
 BASE_DIR = Path(__file__).ancestor(3)
 SRC_DIR = BASE_DIR.child('src')
 
@@ -94,6 +96,9 @@ USE_TZ = True
 
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
+
+# Django Markup Configuration
+MARKUP_FIELD_TYPES = (('markdown', markdown.markdown),)
 
 import django_heroku
 django_heroku.settings(locals())
