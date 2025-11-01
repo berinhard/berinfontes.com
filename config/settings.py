@@ -1,5 +1,5 @@
-from unipath import Path
-
+import dj_database_url
+from pathlib import Path
 from decouple import config
 
 BASE_DIR = Path(__file__).ancestor(3)
@@ -11,7 +11,14 @@ SECRET_KEY = config('SECRET_KEY')
 PRODUCTION = config('PRODUCTION', default=False)
 
 
-ALLOWED_HOSTS = ['berinfontes.com']
+ALLOWED_HOSTS = []
+if PRODUCTION:
+    ALLOWED_HOSTS = ['neukoelln.berinfontes.com', 'berinfontes.com', 'berinfontes.net']
+    CSRF_TRUSTED_ORIGINS = [
+        "https://*.berinfontes.com",
+        "https://berinfontes.com",
+        "https://berinfontes.net",
+    ]
 
 
 INSTALLED_APPS = [
@@ -27,6 +34,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,7 +42,6 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 
@@ -58,16 +65,21 @@ TEMPLATES = [
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR.child("static")]
-STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='whitenoise.django.GzipManifestStaticFilesStorage')
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.django.GzipManifestStaticFilesStorage",
+    },
+}
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 10  # 10 MB
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR.child('db.sqlite3'),
-    }
+    'default': dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
