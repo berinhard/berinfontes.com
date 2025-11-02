@@ -112,5 +112,5 @@ USE_TZ = True
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
 
-import django_heroku
-django_heroku.settings(locals())
+# Default primary key field type for Django 5.2+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
