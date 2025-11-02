@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from src.berin.models import Talk
+from berin.models import Talk
 
 
 class TalkAdmin(admin.ModelAdmin):

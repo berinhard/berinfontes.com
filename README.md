@@ -9,9 +9,9 @@ Outra dependência é o Node.js para rodar o [sass](https://www.npmjs.com/packag
 Depois do postgres instalado, siga com:
 
 1.  Instalar o [pyenv](https://github.com/pyenv/pyenv-installer);
-2.  Instalar o Python 3.8 com `pyenv install 3.8.10`:
+2.  Instalar o Python 3.13 com `pyenv install 3.13`:
 3.  Clonar o repositório: `git@github.com:berinhard/berinfontes.com.git`;
-4.  Criar o ambiente virtual Python: `pyenv virtualenv 3.8.10 berinfontes.com`;
+4.  Criar o ambiente virtual Python: `pyenv virtualenv 3.13 berinfontes.com`;
 5.  Ativar o ambiente virtual `pyenv activate berinfontes.com`;
 6.  Entrar no diretório do projeto: `cd berinfontes.com`;
 7.  Instalar dependencias `pip install -r requirements.txt`;

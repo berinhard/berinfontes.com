@@ -13,3 +13,6 @@ project/media/*
 project/staticfiles
 node_modules/
 .idea
+.envrc
+prod-env
+staticfiles

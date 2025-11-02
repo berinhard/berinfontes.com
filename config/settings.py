@@ -1,9 +1,8 @@
-from unipath import Path
-
+import dj_database_url
+from pathlib import Path
 from decouple import config
 
-BASE_DIR = Path(__file__).ancestor(3)
-SRC_DIR = BASE_DIR.child('src')
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 DEBUG = config('DEBUG', cast=bool)
@@ -11,7 +10,15 @@ SECRET_KEY = config('SECRET_KEY')
 PRODUCTION = config('PRODUCTION', default=False)
 
 
-ALLOWED_HOSTS = ['berinfontes.com']
+ALLOWED_HOSTS = []
+if PRODUCTION:
+    ALLOWED_HOSTS = ['neukoelln.berinfontes.com', 'berinfontes.com', 'berinfontes.me', "berin.lat"]
+    CSRF_TRUSTED_ORIGINS = [
+        "https://*.berinfontes.com",
+        "https://berinfontes.com",
+        "https://berinfontes.me",
+        "https://berin.lat",
+    ]
 
 
 INSTALLED_APPS = [
@@ -22,11 +29,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_extensions',
-    'src.berin',
+    'berin',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -34,16 +42,15 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 
-ROOT_URLCONF = 'src.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.child('templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -56,18 +63,27 @@ TEMPLATES = [
     },
 ]
 
+WSGI_APPLICATION = 'config.wsgi.application'
+
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR.child("static")]
-STATICFILES_STORAGE = config('STATICFILES_STORAGE', default='whitenoise.django.GzipManifestStaticFilesStorage')
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
+
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = BASE_DIR / 'media'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 10  # 10 MB
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR.child('db.sqlite3'),
-    }
+    'default': dj_database_url.parse(
+        config('DATABASE_URL'),
+        conn_max_age=600,
+        conn_health_checks=True,
+    )
 }
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -89,11 +105,10 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en'
 TIME_ZONE = 'America/Sao_Paulo'
 USE_I18N = False
-USE_L10N = True
 USE_TZ = True
 
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
 
-import django_heroku
-django_heroku.settings(locals())
+# Default primary key field type for Django 5.2+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
