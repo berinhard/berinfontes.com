@@ -2,8 +2,7 @@ import dj_database_url
 from pathlib import Path
 from decouple import config
 
-BASE_DIR = Path(__file__).ancestor(3)
-SRC_DIR = BASE_DIR.child('src')
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 DEBUG = config('DEBUG', cast=bool)
@@ -50,7 +49,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR.child('templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,7 +65,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR.child("static")]
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.django.GzipManifestStaticFilesStorage",
@@ -74,7 +74,7 @@ STORAGES = {
 }
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR.child('media')
+MEDIA_ROOT = BASE_DIR / 'media'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 10  # 10 MB
 
 DATABASES = {
