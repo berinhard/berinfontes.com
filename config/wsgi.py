@@ -1,19 +1,15 @@
 """
-WSGI config for project project.
+WSGI config for berinfontes.com project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/1.11/howto/deployment/wsgi/
+https://docs.djangoproject.com/en/5.2/howto/deployment/wsgi/
 """
 
-from unipath import Path
-import os, sys
-
+import os
 from django.core.wsgi import get_wsgi_application
-PROJECT_DIR = Path(__file__).ancestor(3)
 
-sys.path.insert(0, PROJECT_DIR)
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'src.config.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
 
 application = get_wsgi_application()
