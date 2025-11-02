@@ -12,11 +12,11 @@ PRODUCTION = config('PRODUCTION', default=False)
 
 ALLOWED_HOSTS = []
 if PRODUCTION:
-    ALLOWED_HOSTS = ['neukoelln.berinfontes.com', 'berinfontes.com', 'berinfontes.net', "berin.lat"]
+    ALLOWED_HOSTS = ['neukoelln.berinfontes.com', 'berinfontes.com', 'berinfontes.me', "berin.lat"]
     CSRF_TRUSTED_ORIGINS = [
         "https://*.berinfontes.com",
         "https://berinfontes.com",
-        "https://berinfontes.net",
+        "https://berinfontes.me",
         "https://berin.lat",
     ]
 
