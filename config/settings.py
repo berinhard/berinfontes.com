@@ -81,7 +81,8 @@ MEDIA_ROOT = BASE_DIR / 'media'
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024 * 10  # 10 MB
 
 DATABASES = {
-    'default': dj_database_url.config(
+    'default': dj_database_url.parse(
+        config('DATABASE_URL'),
         conn_max_age=600,
         conn_health_checks=True,
     )
